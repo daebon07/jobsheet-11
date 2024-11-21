@@ -1,6 +1,14 @@
 public class kafe20 {
-public static void menu( String namapelanggan, boolean ismember) {
+public static void menu( String namapelanggan, boolean ismember, String promo) {
     System.out.println("selamat datang " + namapelanggan + " !");
+
+    if (promo.equals("DISKON50")) {
+        System.out.println("Anda mendapatkan diskon 50%!");
+    } else if (promo.equals("DISKON30")) {
+        System.out.println("Anda mendapatkan diskon 30%!");
+    } else {
+        System.out.println("Kode promo tidak valid.");
+    }
 
     if (ismember){
         System.out.println("anda adalah member dapatkan diskon 10% untuk setiap pembelian");
@@ -18,6 +26,8 @@ public static void menu( String namapelanggan, boolean ismember) {
     
 }
 public static void main(String[] args) {
-   menu("andi",true);  
+    menu("Andi", true, "DISKON50"); 
+    menu("shabran", false, "DISKON30"); 
+    menu("solohin", true, "INVALID");   
 }
 }
